@@ -8,8 +8,20 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'locais',
     pathMatch: 'full'
+  },
+  {
+    path: 'autenticar',
+    loadChildren: () => import('./autenticar/autenticar.module').then( m => m.AutenticarPageModule)
+  },
+  {
+    path: 'locais',
+    loadChildren: () => import('./locais/locais.module').then( m => m.LocaisPageModule)
+  },
+  {
+    path: 'reservas',
+    loadChildren: () => import('./reservas/reservas.module').then( m => m.ReservasPageModule)
   },
 ];
 
